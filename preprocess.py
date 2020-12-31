@@ -4,13 +4,12 @@ tokenizer = GPT2Tokenizer.from_pretrained("gpt2")
 
 def prepare_data():
     dataset = load_dataset("aeslc", "en")
-    print(dataset["train"][0]["email_body"])
     dataset = dataset["train"].map(tokenize)
     return dataset
 
 def tokenize(item):
     text = item['email_body']
-    tokenized = tokenizer.tokenize("<|txt|> " + text + " <|cph|> ")['input_ids']
+    tokenized = tokenizer._tokenize("<|txt|> " + text + " <|cph|> ")
     return {"tokens": tokenized}
 
 
