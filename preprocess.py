@@ -10,7 +10,8 @@ def prepare_data():
 
 def tokenize(item):
     text = item['review_body']
-    return tokenizer.tokenize(text)
+    tokenized = tokenizer.tokenize(text)
+    return {"tokens": tokenized}
 
 
 if __name__ == "__main__":
