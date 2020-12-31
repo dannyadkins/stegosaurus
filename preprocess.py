@@ -4,12 +4,12 @@ tokenizer = GPT2Tokenizer.from_pretrained("gpt2")
 
 
 def prepare_data():
-    dataset = load_dataset("amazon_reviews_multi", "en")
+    dataset = load_dataset("aeslc", "en")
     dataset = dataset["train"].map(tokenize)
     return dataset
 
 def tokenize(item):
-    text = item['review_body']
+    text = item['email_body']
     tokenized = tokenizer.tokenize(text)
     return {"tokens": tokenized}
 
