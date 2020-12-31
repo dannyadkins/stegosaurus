@@ -7,4 +7,4 @@ def prepare_data():
     return dataset
 
 if __name__ == "__main__":
-    print(prepare_data)
+    print(prepare_data())
