@@ -10,7 +10,7 @@ def prepare_data():
 
 def tokenize(item):
     text = item['email_body']
-    tokenized = tokenizer.tokenize("<TXT> " + text + " <CPH> ")
+    tokenized = tokenizer("<|txt|> " + text + " <|cph|> ")['input_ids']
     return {"tokens": tokenized}
 
 
