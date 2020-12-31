@@ -11,7 +11,7 @@ def prepare_data():
 def tokenize(item):
     text = item['email_body']
     tokenized = tokenizer.tokenize("<TXT> " + text + " <CPH> ")
-    return {"tokens": tokenized['input_ids']}
+    return {"tokens": tokenized}
 
 
 if __name__ == "__main__":
