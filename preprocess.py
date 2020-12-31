@@ -3,7 +3,7 @@ from datasets import load_dataset
 
 
 def prepare_data():
-    dataset = load_dataset("wikicorpus")
+    dataset = load_dataset("amazon_reviews_multi")
     return dataset
 
 if __name__ == "__main__":
